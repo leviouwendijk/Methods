@@ -1,5 +1,23 @@
 import Foundation
 
+public func trimmedOrNil(
+    _ value: String?
+) -> String? {
+    guard let value else {
+        return nil
+    }
+
+    return trimmedOrNil(
+        value
+    )
+}
+
+public func trimmedOrNil(
+    _ value: String
+) -> String? {
+    value.nilIfBlank
+}
+
 extension String {
     public var trimmed: String {
         return self.trimmingCharacters(
