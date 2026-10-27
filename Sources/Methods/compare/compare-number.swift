@@ -16,7 +16,10 @@ extension Compare.Number.Decimal {
         case asDouble
     }
 
-    /// Returns `true` when `diff` lies outside `±tolerance`.
+    /// Legacy compatibility API. Prefer Math.DecimalComparison.exceeds(_:tolerance:)
+    /// for canonical exact base-10 tolerance comparison.
+    /// The .asDouble strategy remains available only for existing consumers.
+    @available(*, deprecated, message: "Use Math.DecimalComparison.exceeds(_:tolerance:); Methods.Compare remains for source compatibility.")
     public static func exceeds(
         _ diff:      Foundation.Decimal,
         tolerance:   Foundation.Decimal,
